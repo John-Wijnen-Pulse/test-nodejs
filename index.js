@@ -11,3 +11,7 @@ replServer.context.doCalculations = function() {
 replServer.context.sendSMS = function(to_number, message) {
     twilio.sendSMS(to_number, message);
 }
+
+replServer.context.sendMMS = function(to_number, message, image) {
+    twilio.sendMMS(to_number, message, image);
+}
