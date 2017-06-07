@@ -9,12 +9,12 @@ app.get('/receive', function (req, res) {
   res.send('Hi, this is the TwilioBot listening endpoint!'); 
 }); 
 
-module.exports.startEndpoint = function() {
+module.exports.startEndpoint = function(port) {
     if(!transitioning && !listening)
     { 
         transitioning = true;
-        server = app.listen(8080, function () { 
-            console.log('TwilioBot listening on port 8080.'); 
+        server = app.listen(port, function () { 
+            console.log('TwilioBot listening on port ' + port + '.'); 
             listening = true; 
             transitioning = false;
         });
